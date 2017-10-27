@@ -18,11 +18,20 @@ module dsd_processor
 
 	wire [15:0] data_in; // write data to reg file
 	wire [15:0] src, dest; // src, dest register values
-
-	wire [15:0] imm_8bit;
+	
+	wire [8:0] disp;
+	wire [8:0] imm_8bit;
 	wire [15:0] imm_16bit; 
 
 	wire[4:0] flcnz;
+
+	//ALU inputs outputs
+	wire [15:0] alu_in1, alu_in2, alu_out;
+	
+	//shifter inputs outputs
+	wire [15:0] shifter_in, shifter_out;
+
+
 
 	//control signals
 	
@@ -79,34 +88,41 @@ module dsd_processor
 		.imm_ex_sel(imm_ex_sel)
 	);
 
-/*
-input clk,
-	input rst_n,
-	
-	//control signal
-	input jmp,
-	input br,
-	
-	//datapath
-    input [15:0] instruction_in,
-    
-    output reg [15:0] instruction_out,
-    output [7:0] imm,disp,
-    output [3:0] addr_a,addr_b
-*/
 	ir ir1( .rst_n(RESET),
 		.jmp(jmp),
 		.br(br),
 		.instruction_in(IMEM_ADDRESS),
 		.instruction_out(instruction_out),
 		.imm(imm_8bit),
+		.disp(disp),
 		.addr_a(addrA),
 		.addr_b(addrB)
 		);
-          
-	pc pc1( );
-      
-	ALU alu1( );
+
+	
+	pc pc1( .clk(CLK),
+		.rst_n(RESET),
+		.jmp(jmp),
+		.br(br),
+		.src(src),
+		.disp(disp),
+		.addr_instruction(IMEME_ADDRESS)
+	);
+    
+	/*
+input [15:0] A,
+input [15:0] B,
+input [5:0] alu_sel,
+output reg [15:0] out,
+output reg [4:0] flcnz
+*/
+
+	ALU alu1( .A(alu_in1),
+		.B(alu_in2),
+		.alu_sel(alu_sel),
+		.out(alu_out),
+		.flcnz(flcnz)
+ 	);
 
 	PSR psr1( );
 endmodule
