@@ -19,8 +19,8 @@ module dsd_processor
 	wire [15:0] data_in; // write data to reg file
 	wire [15:0] src, dest; // src, dest register values
 	
-	wire [8:0] disp;
-	wire [8:0] imm_8bit;
+	wire [7:0] disp;
+	wire [7:0] imm_8bit;
 	wire [15:0] imm_16bit; 
 
 	//PSR inputs outputs
@@ -47,14 +47,41 @@ module dsd_processor
 
 
 	//mux1
+		
+	assign alu_in1 = mux_sel0 ? imm_16bit : src;
 
 	//mux2
+	
+	assign shifter_in = mux_sel0 ? imm_16bit : dest;
 
 	//mux3
 
+	assign 
+
 	//tri state sel
 	
+	genvar i;
+	generate for (i=0; i<16; i=i+1) begin : tri
+		
+		bufif1 (data_in[i], shifter_out[i], tri_sel[0]);
+		bufif1 (data_in[i], alu_out[i], tri_sel[1]);
+		bufif1 (data_in[i], alu_in1[i], tri_sel[2]);
+		bufif1 (data_in[i], DMEM_DATA_READ[i], tri_sel[3]);
+		bufif1 (data_in[i], IMEM_ADDRESS[i], tri_sel[4]);
+
+	end endgenerate
+
+
 	//connect other wires	
+	
+	//sign extension
+	assign imm_16bit [7:0] = imm_8bit;
+	assign imm_16bit [15:8] = imm_ex_sel ? {8{imm_8bit[7]}} : {8{1'b0}};
+	
+	//DMEM wires
+	assign DMEM_ADDRESS = src;
+	assign DMEM_DATA_WRITE = dest;
+
 
   ////////////////////////////////////////////
   
@@ -101,7 +128,7 @@ module dsd_processor
 	ir ir1( .rst_n(RESET),
 		.jmp(jmp),
 		.br(br),
-		.instruction_in(IMEM_ADDRESS),
+		.instruction_in(DMEM_ADDRESS),
 		.instruction_out(instruction_out),
 		.imm(imm_8bit),
 		.disp(disp),
@@ -116,7 +143,7 @@ module dsd_processor
 		.br(br),
 		.src(src),
 		.disp(disp),
-		.addr_instruction(IMEME_ADDRESS)
+		.addr_instruction(IMEM_ADDRESS)
 	);
     
 
