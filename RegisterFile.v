@@ -1,4 +1,4 @@
-module registerFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
+module register_file(addrA, addrB, data_in, CLK, RST, WR, src, dest,
 	r0, r1, r2, r3, r4, r5, r6, r7);
 
 	input [3:0] addrA, addrB; 

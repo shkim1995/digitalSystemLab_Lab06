@@ -65,8 +65,8 @@ module dsd_processor
 	assign data_in = (tri_sel==5'b00001) ? shifter_out
 		: (tri_sel==5'b00010) ? alu_out
 		: (tri_sel==5'b00100) ? alu_in1
-		: (tri_sel==5'b01000) ? DMEM_DATA_READ
-		: (tri_sel==5'b10000) ? IMEM_ADDRESS
+		: (tri_sel==5'b01000) ? IMEM_ADDRESS
+		: (tri_sel==5'b10000) ? DMEM_DATA_READ
 		: 16'bz;
 
 	/*genvar i;
@@ -77,7 +77,6 @@ module dsd_processor
 		bufif1 (data_in[i], alu_in1[i], tri_sel[2]);
 		bufif1 (data_in[i], DMEM_DATA_READ[i], tri_sel[3]);
 		bufif1 (data_in[i], IMEM_ADDRESS[i], tri_sel[4]);
-
 	end endgenerate*/
 
 

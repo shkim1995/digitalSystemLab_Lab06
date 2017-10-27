@@ -54,7 +54,7 @@ module dsd_processor
 
 	//mux2
 	
-	assign shifter_in = mux_sel0 ? imm_16bit : dest;
+	assign shifter_in = mux_sel1 ? imm_16bit : dest;
 
 	//mux3
 
@@ -77,7 +77,6 @@ module dsd_processor
 		bufif1 (data_in[i], alu_in1[i], tri_sel[2]);
 		bufif1 (data_in[i], DMEM_DATA_READ[i], tri_sel[3]);
 		bufif1 (data_in[i], IMEM_ADDRESS[i], tri_sel[4]);
-
 	end endgenerate*/
 
 

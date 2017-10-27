@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/Modeltech_pe_edu_10.4a/examples
 vALU
-Z0 !s110 1509084725
+Z0 !s110 1509086276
 !i10b 1
 !s100 cQ6C2FAUTBJ92`[S`_NGZ0
 IScQ@=4`V9aj79aFSM=IJ70
@@ -23,7 +23,7 @@ Z6 OP;L;10.4a;61
 r1
 !s85 0
 31
-Z7 !s108 1509084725.000000
+Z7 !s108 1509086276.000000
 Z8 !s107 C:/Users/ECE/Desktop/1234/ALU_PSR.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/ALU_PSR.v|
 !s101 -O0
@@ -31,7 +31,7 @@ Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/ALU
 Z10 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact -O0
 n@a@l@u
 vBLKMEMSP_V6_2
-R0
+Z11 !s110 1509086275
 !i10b 1
 !s100 Ak1WORaWng6Z2SU^z]VLf1
 I?a8?Z0@MQkHbLQ4O`@lP`1
@@ -45,7 +45,7 @@ R6
 r1
 !s85 0
 31
-R7
+Z12 !s108 1509086275.000000
 !s107 C:/Users/ECE/Desktop/1234/BLKMEMSP_V6_2.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/BLKMEMSP_V6_2.v|
 !s101 -O0
@@ -59,17 +59,17 @@ R0
 Im=_6Z[?kG1ZDE8gd7?LZ71
 R1
 R2
-Z11 w1506663202
-Z12 8C:/Users/ECE/Desktop/1234/CLA.v
-Z13 FC:/Users/ECE/Desktop/1234/CLA.v
+Z13 w1506663202
+Z14 8C:/Users/ECE/Desktop/1234/CLA.v
+Z15 FC:/Users/ECE/Desktop/1234/CLA.v
 L0 61
 R6
 r1
 !s85 0
 31
 R7
-Z14 !s107 C:/Users/ECE/Desktop/1234/CLA.v|
-Z15 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/CLA.v|
+Z16 !s107 C:/Users/ECE/Desktop/1234/CLA.v|
+Z17 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/CLA.v|
 !s101 -O0
 !i113 1
 R10
@@ -81,17 +81,17 @@ R0
 IXh@1c@z1SjGEj5beKd4H82
 R1
 R2
-R11
-R12
 R13
+R14
+R15
 L0 1
 R6
 r1
 !s85 0
 31
 R7
-R14
-R15
+R16
+R17
 !s101 -O0
 !i113 1
 R10
@@ -103,17 +103,17 @@ R0
 I[59QWj3iWm2YDQP<PI=363
 R1
 R2
-R11
-R12
 R13
-Z16 L0 40
+R14
+R15
+Z18 L0 40
 R6
 r1
 !s85 0
 31
 R7
-R14
-R15
+R16
+R17
 !s101 -O0
 !i113 1
 R10
@@ -121,11 +121,11 @@ n@c@l@g4
 vdecoder
 R0
 !i10b 1
-!s100 8oUWeHaNAYRf:IXVTPkLm3
-I4=HeMo^55a7ZdY5D<FaX`2
+!s100 6>CdHREj=<7nV[MP]4maX0
+IA_=@9j?I[LOJ9Fk2SP<SA3
 R1
 R2
-w1509084119
+w1509085416
 8C:/Users/ECE/Desktop/1234/decoder_skeleton.v
 FC:/Users/ECE/Desktop/1234/decoder_skeleton.v
 L0 2
@@ -146,28 +146,28 @@ R0
 II4^``1cOOP@2hT75eZcZS3
 R1
 R2
-Z17 w1209017432
+Z19 w1209017432
 8C:/Users/ECE/Desktop/1234/dmem.v
 FC:/Users/ECE/Desktop/1234/dmem.v
-R16
+R18
 R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 C:/Users/ECE/Desktop/1234/dmem.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/dmem.v|
 !s101 -O0
 !i113 1
 R10
 vdsd_processor
-R0
+!s110 1509086422
 !i10b 1
-!s100 ^IKVoH_B65=J8[mLOHZ`d2
-IC`?M2V6XoFQFIVRm]j`bI2
+!s100 lk^4Qoe19zGMWAi1J0T7k2
+INe9?n^X0oHB5c@^9YI:1R2
 R1
 R2
-w1509084576
+w1509086421
 8C:/Users/ECE/Desktop/1234/dsd_processer.v
 FC:/Users/ECE/Desktop/1234/dsd_processer.v
 L0 2
@@ -175,28 +175,28 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1509086422.000000
 !s107 C:/Users/ECE/Desktop/1234/dsd_processer.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/dsd_processer.v|
 !s101 -O0
 !i113 1
 R10
 vimem
-R0
+R11
 !i10b 1
 !s100 6[D7OWgE?dE46?H:7Y94W0
 I7J;<aHRG1[@0zWDI157;13
 R1
 R2
-R17
+R19
 8C:/Users/ECE/Desktop/1234/imem.v
 FC:/Users/ECE/Desktop/1234/imem.v
-R16
+R18
 R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 C:/Users/ECE/Desktop/1234/imem.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/imem.v|
 !s101 -O0
@@ -230,17 +230,17 @@ R0
 IZ3WMDNYWZlTfbS9FJIBSE1
 R1
 R2
-Z18 w1507818840
-Z19 8C:/Users/ECE/Desktop/1234/Shifter.v
-Z20 FC:/Users/ECE/Desktop/1234/Shifter.v
+Z20 w1507818840
+Z21 8C:/Users/ECE/Desktop/1234/Shifter.v
+Z22 FC:/Users/ECE/Desktop/1234/Shifter.v
 L0 2
 R6
 r1
 !s85 0
 31
 R7
-Z21 !s107 C:/Users/ECE/Desktop/1234/Shifter.v|
-Z22 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/Shifter.v|
+Z23 !s107 C:/Users/ECE/Desktop/1234/Shifter.v|
+Z24 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/Shifter.v|
 !s101 -O0
 !i113 1
 R10
@@ -287,28 +287,27 @@ R9
 !i113 1
 R10
 n@p@s@r
-vregisterFile
+vregister_file
 R0
 !i10b 1
-!s100 >;<9:@P;SKBl<^>U]SL7M0
-IP145L[AAB3>l:XFdN6bgH0
+!s100 E2ck2BEBoCL7:1=_F?bNk1
+IaB2hWR]75IY[O>XlXP>PP3
 R1
 R2
-w1509080226
-Z23 8C:/Users/ECE/Desktop/1234/RegisterFile.v
-Z24 FC:/Users/ECE/Desktop/1234/RegisterFile.v
+w1509085243
+Z25 8C:/Users/ECE/Desktop/1234/RegisterFile.v
+Z26 FC:/Users/ECE/Desktop/1234/RegisterFile.v
 L0 1
 R6
 r1
 !s85 0
 31
 R7
-Z25 !s107 C:/Users/ECE/Desktop/1234/RegisterFile.v|
-Z26 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/RegisterFile.v|
+Z27 !s107 C:/Users/ECE/Desktop/1234/RegisterFile.v|
+Z28 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/RegisterFile.v|
 !s101 -O0
 !i113 1
 R10
-nregister@file
 vRegisterFile
 !s110 1509080126
 !i10b 1
@@ -317,20 +316,42 @@ ImYG3?kZK6l3GWKS<1:MS<0
 R1
 R2
 w1509080119
-R23
-R24
+R25
+R26
 L0 1
 R6
 r1
 !s85 0
 31
 !s108 1509080126.000000
-R25
-R26
+R27
+R28
 !s101 -O0
 !i113 1
 R10
 n@register@file
+vregisterFile
+!s110 1509085040
+!i10b 1
+!s100 >;<9:@P;SKBl<^>U]SL7M0
+IP145L[AAB3>l:XFdN6bgH0
+R1
+R2
+w1509080226
+R25
+R26
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1509085040.000000
+R27
+R28
+!s101 -O0
+!i113 1
+R10
+nregister@file
 vshifter
 R0
 !i10b 1
@@ -338,28 +359,28 @@ R0
 I0ePFd0=AFnmi[Mf60Fo6o2
 R1
 R2
-R18
-R19
 R20
+R21
+R22
 L0 17
 R6
 r1
 !s85 0
 31
 R7
-R21
-R22
+R23
+R24
 !s101 -O0
 !i113 1
 R10
 vtb_top
-R0
+R11
 !i10b 1
-!s100 T<0R`3O^jzo3LTEfeX8l90
-IM3Q1>Ci@A[XM@2X5F5m3^0
+!s100 ZHM92ViB`cL^_zDYb]5lj3
+I4hW`j>>4VM3d`]INf6J5Q1
 R1
 R2
-w1509084721
+w1509086262
 8C:/Users/ECE/Desktop/1234/tb_top.v
 FC:/Users/ECE/Desktop/1234/tb_top.v
 L0 19
@@ -367,7 +388,7 @@ R6
 r1
 !s85 0
 31
-R7
+R12
 !s107 C:/Users/ECE/Desktop/1234/tb_top.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/ECE/Desktop/1234/tb_top.v|
 !s101 -O0

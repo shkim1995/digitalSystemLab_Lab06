@@ -34,6 +34,13 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	ir
 
+} {} {}} C:/Users/ECE/Desktop/1234/tb_top.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/tb_top.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module tb_top
+
+Top level modules:
+	tb_top
+
 } {} {}} C:/Users/ECE/Desktop/1234/imem.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/imem.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module imem
@@ -59,10 +66,10 @@ Top level modules:
 
 } {} {}} C:/Users/ECE/Desktop/1234/RegisterFile.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/RegisterFile.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module registerFile
+-- Compiling module register_file
 
 Top level modules:
-	registerFile
+	register_file
 
 } {} {}} C:/Users/ECE/Desktop/1234/ALU_PSR.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/ALU_PSR.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
@@ -72,12 +79,5 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	ALU
 	PSR
-
-} {} {}} C:/Users/ECE/Desktop/1234/dsd_processer.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/dsd_processer.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module dsd_processor
-
-Top level modules:
-	dsd_processor
 
 } {} {}}

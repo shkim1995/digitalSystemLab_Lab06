@@ -89,6 +89,8 @@ reg [15:0] alu_in1, alu_in2;
 reg[5:0] alu_sel;
 reg [15:0] alu_out;
 
+reg jmp, br, lui;
+
 always @(*) begin
 	data_in = u_dsd_processor.data_in;
 	tri_sel = u_dsd_processor.tri_sel;
@@ -101,6 +103,7 @@ always @(*) begin
 	alu_sel = u_dsd_processor.alu_sel;
 jmp = u_dsd_processor.jmp;
 br = u_dsd_processor.br;
+lui = u_dsd_processor.lui;
 end
 
 
