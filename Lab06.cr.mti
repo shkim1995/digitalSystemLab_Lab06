@@ -1,11 +1,4 @@
-C:/Users/ECE/Desktop/1234/decoder_skeleton.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/decoder_skeleton.v
-Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
--- Compiling module decoder
-
-Top level modules:
-	decoder
-
-} {} {}} C:/Users/ECE/Desktop/1234/Shifter.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/Shifter.v
+C:/Users/ECE/Desktop/1234/Shifter.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/Shifter.v
 Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
 -- Compiling module mux16
 -- Compiling module shifter
@@ -79,5 +72,12 @@ Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 
 Top level modules:
 	ALU
 	PSR
+
+} {} {}} C:/Users/ECE/Desktop/1234/dsd_processer.v {1 {vlog -work work -stats=none C:/Users/ECE/Desktop/1234/dsd_processer.v
+Model Technology ModelSim PE Student Edition vlog 10.4a Compiler 2015.03 Apr  7 2015
+-- Compiling module dsd_processor
+
+Top level modules:
+	dsd_processor
 
 } {} {}}
