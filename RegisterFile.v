@@ -1,4 +1,4 @@
-module RegisterFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
+module registerFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
 	r0, r1, r2, r3, r4, r5, r6, r7);
 
 	input [3:0] addrA, addrB; 
@@ -9,6 +9,10 @@ module RegisterFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
 	
 	output [15:0] r0, r1, r2, r3, r4, r5, r6, r7;
 	
+
+	reg [15:0] data[7:0];
+	reg [15:0] i;
+
 	assign r0 = data[0];
 	assign r1 = data[1];
 	assign r2 = data[2];
@@ -17,9 +21,6 @@ module RegisterFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
 	assign r5 = data[5];
 	assign r6 = data[6];
 	assign r7 = data[7];
-
-	reg [15:0] data[7:0];
-	reg [15:0] i;
 
 	initial begin
 		src <= 16'b0;

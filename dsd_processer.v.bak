@@ -1,11 +1,13 @@
 `timescale 1ns / 1ps
 module dsd_processor
  (r0,r1,r2,r3,r4,r5,r6,r7, IMEM_ADDRESS , DMEM_ADDRESS, DMEM_DATA_WRITE,
-  DMEM_WRITE_ENABLE , CLK ,RESET , IMEM_DATA , DMEM_DATA_READ );
+  DMEM_WRITE_ENABLE , CLK ,RESET , IMEM_DATA , DMEM_DATA_READ ,
+	src, dest);
   
   output [15:0] r0,r1,r2,r3,r4,r5,r6,r7 ;
   output [15:0] IMEM_ADDRESS, DMEM_ADDRESS , DMEM_DATA_WRITE;
   output        DMEM_WRITE_ENABLE;
+  output [15:0] src, dest;
   input  [15:0] IMEM_DATA,DMEM_DATA_READ;
   input         CLK,RESET;
   
@@ -56,12 +58,12 @@ module dsd_processor
 
 	//mux3
 
-	assign 
+	assign shift_amount = shift_imm ? imm_16bit : src;
 
 	//tri state sel
 	
 	genvar i;
-	generate for (i=0; i<16; i=i+1) begin : tri
+	generate for (i=0; i<16; i=i+1) begin : tris
 		
 		bufif1 (data_in[i], shifter_out[i], tri_sel[0]);
 		bufif1 (data_in[i], alu_out[i], tri_sel[1]);
@@ -85,12 +87,12 @@ module dsd_processor
 
   ////////////////////////////////////////////
   
-	register_file rf1(
+	registerFile rf1(
 		.addrA(addrA), 
 		.addrB(addrB),
 		.data_in(data_in), 
 		.CLK(CLK), 
-		.RST(RESET), 
+		.RST(!RESET), 
 		.WR(register_we), 
 		.src(src), 
 		.dest(dest),
@@ -104,7 +106,7 @@ module dsd_processor
 		.out(shifter_out)
 	);
 
-	decoder decoder1( .instruction(instruction_out)
+	decoder decoder1( .instruction(instruction_out),
 		.flcnz(flcnz_out),
 		
 		.tri_sel(tri_sel),
@@ -128,7 +130,7 @@ module dsd_processor
 	ir ir1( .rst_n(RESET),
 		.jmp(jmp),
 		.br(br),
-		.instruction_in(DMEM_ADDRESS),
+		.instruction_in(IMEM_ADDRESS),
 		.instruction_out(instruction_out),
 		.imm(imm_8bit),
 		.disp(disp),

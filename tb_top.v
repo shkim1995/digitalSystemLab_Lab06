@@ -39,6 +39,9 @@ module tb_top;
    wire [15:0]		r6;
    wire [15:0]		r7;
 
+	wire[15:0] src, dest;
+
+
    // Processor
    dsd_processor u_dsd_processor (
 				  .CLK			(clk),
@@ -56,7 +59,8 @@ module tb_top;
 				  .r4			(r4),
 				  .r5			(r5),
 				  .r6			(r6),
-				  .r7			(r7));
+				  .r7			(r7),
+				  .src(src), .dest(dest));
 
    // Instruction memory (Width: 16, Depth: 1024)
    // Code initialization file: imem.mif (from imem.coe)
@@ -73,6 +77,20 @@ module tb_top;
    // Simulation
    /////////////////////////////////////////////////////////////////////
    
+
+//debug
+
+reg[15:0] data_in;
+reg[4:0] tri_sel;
+reg[15:0] instruction_out;
+always @(*) begin
+	data_in = u_dsd_processor.data_in;
+	tri_sel = u_dsd_processor.tri_sel;
+	instruction_out= u_dsd_processor.instruction_out;
+
+end
+
+
    // Clock
    initial
      begin
