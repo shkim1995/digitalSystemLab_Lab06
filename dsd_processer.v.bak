@@ -100,8 +100,6 @@ input clk,
 		.instruction_in(IMEM_ADDRESS),
 		.instruction_out(instruction_out),
 		.imm(imm_8bit),
-		.addr_a(addrA),
-		.addr_b(addrB)
 		);
           
 	pc pc1( );

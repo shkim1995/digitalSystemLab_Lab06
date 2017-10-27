@@ -87,10 +87,10 @@ module tb_top;
    // Reset
    initial
      begin
-	#0 reset = 1'b1;
-	#1 reset = 1'b0;
+	#0 reset = 1'b0;
+	#1 reset = 1'b1;
 	repeat(10) @(posedge clk);
-	reset = 1'b1;
+	reset = 1'b0;
      end
 
    // Result checker

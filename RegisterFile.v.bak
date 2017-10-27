@@ -33,14 +33,14 @@ module RegisterFile(addrA, addrB, data_in, CLK, RST, WR, src, dest,
 			for(i=0; i<8; i = i+1) data[i]<=0;
 		end
 
-		else if(WR) data[addrB[2:0]] <= data_in;
+		else if(WR) data[addrB] <= data_in;
 	
 	end
 
 	//read
 	always @(*) begin
-		src = data[addrA[2:0]];
- 		dest = data[addrB[2:0]];
+		src = data[addrA];
+ 		dest = data[addrB];
 	end
 
 
