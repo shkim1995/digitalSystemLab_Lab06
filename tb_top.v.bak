@@ -81,10 +81,26 @@ module tb_top;
 //debug
 
 reg[15:0] data_in;
-reg[15:0] tri_sel;
+reg[4:0] tri_sel;
+reg[15:0] instruction_out;
+
+reg[15:0] ir_inst_in, ir_inst_out;
+reg [15:0] alu_in1, alu_in2;
+reg[5:0] alu_sel;
+reg [15:0] alu_out;
+
 always @(*) begin
 	data_in = u_dsd_processor.data_in;
 	tri_sel = u_dsd_processor.tri_sel;
+	instruction_out= u_dsd_processor.instruction_out;
+//ir_inst_in = u_dsd_processor.ir1.instruction_in;
+//ir_inst_out = u_dsd_processor.ir1.instruction_out;
+	alu_in1 = u_dsd_processor.alu_in1;
+	alu_out = u_dsd_processor.alu_out;
+	alu_in2 = u_dsd_processor.alu_in2;
+	alu_sel = u_dsd_processor.alu_sel;
+jmp = u_dsd_processor.jmp;
+br = u_dsd_processor.br;
 end
 
 

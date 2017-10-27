@@ -192,7 +192,7 @@ module decoder(
 		end
 		else if( instruction[15:12]== 4'b0010) begin  //ori    
 			tri_sel = 5'b00010;
-			alu_sel = 6'b000010;
+			alu_sel = 6'b100010;
 			register_we = 1;
 			jmp = 0;
 			br = 0;

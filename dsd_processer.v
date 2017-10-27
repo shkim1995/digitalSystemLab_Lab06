@@ -62,7 +62,14 @@ module dsd_processor
 
 	//tri state sel
 	
-	genvar i;
+	assign data_in = (tri_sel==5'b00001) ? shifter_out
+		: (tri_sel==5'b00010) ? alu_out
+		: (tri_sel==5'b00100) ? alu_in1
+		: (tri_sel==5'b01000) ? IMEM_ADDRESS
+		: (tri_sel==5'b10000) ? DMEM_DATA_READ
+		: 16'bz;
+
+	/*genvar i;
 	generate for (i=0; i<16; i=i+1) begin : tris
 		
 		bufif1 (data_in[i], shifter_out[i], tri_sel[0]);
@@ -71,11 +78,11 @@ module dsd_processor
 		bufif1 (data_in[i], DMEM_DATA_READ[i], tri_sel[3]);
 		bufif1 (data_in[i], IMEM_ADDRESS[i], tri_sel[4]);
 
-	end endgenerate
+	end endgenerate*/
 
 
 	//connect other wires	
-	
+	assign alu_in2 = dest;
 	//sign extension
 	assign imm_16bit [7:0] = imm_8bit;
 	assign imm_16bit [15:8] = imm_ex_sel ? {8{imm_8bit[7]}} : {8{1'b0}};
@@ -92,7 +99,7 @@ module dsd_processor
 		.addrB(addrB),
 		.data_in(data_in), 
 		.CLK(CLK), 
-		.RST(!RESET), 
+		.RST(RESET), 
 		.WR(register_we), 
 		.src(src), 
 		.dest(dest),
@@ -127,7 +134,8 @@ module dsd_processor
 		.imm_ex_sel(imm_ex_sel)
 	);
 
-	ir ir1( .rst_n(RESET),
+	ir ir1( .clk(CLK),
+		.rst_n(RESET),
 		.jmp(jmp),
 		.br(br),
 		.instruction_in(IMEM_DATA),
